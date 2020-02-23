@@ -6,10 +6,12 @@ import Button from "@material-ui/core/Button";
 
 export default function Header() {
   return (
-    <div>
+    <div style={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6">Exercises</Typography>
+          <Typography variant="h6" style={{ flexGrow: 1 }}>
+            Exercises
+          </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>

@@ -1,4 +1,8 @@
-import { GET_EXERCISES } from "../actions/types";
+import {
+  GET_EXERCISES,
+  CHANGE_CATEGORY,
+  CHANGE_EXERCISE
+} from "../actions/types";
 import { exercises } from "../constant";
 
 const getExercisesByMuscles = () => {
@@ -25,7 +29,9 @@ const getMuscles = () => {
 const initialState = {
   exercises: getExercisesByMuscles(),
   muscles: getMuscles(),
-  loading: false
+  loading: false,
+  category: "",
+  exercise: {}
 };
 
 export default function(state = initialState, action) {
@@ -34,6 +40,16 @@ export default function(state = initialState, action) {
       return {
         ...state,
         exercises: action.payload
+      };
+    case CHANGE_CATEGORY:
+      return {
+        ...state,
+        category: action.payload
+      };
+    case CHANGE_EXERCISE:
+      return {
+        ...state,
+        exercise: action.payload
       };
     default:
       return state;
